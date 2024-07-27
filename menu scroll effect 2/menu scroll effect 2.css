@@ -1,0 +1,46 @@
+:root {
+    --purple: rgb(190, 106, 246);
+    --pink: rgb(250, 91, 186);
+}
+
+body {
+    background-color: rgb(20, 20, 20);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0px;
+}
+
+.menu-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    display: block;
+    font-family: fantasy, cursive;
+    font-size: clamp(2em, 8vw, 7em);
+    padding: clamp(0.25em, 1vw, 1em) clamp(1em, 4vw, 4em);
+    position: relative;
+    text-decoration: none;
+}
+
+.menu-item:hover:before {
+    transition: width 500ms ease;
+    width: 100%;
+}
+
+.menu-item:before {
+    background: linear-gradient(
+        to right, transparent, var(--purple) var(--color-percent), var(--pink)
+    );
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 0%;
+}
+
+.menu-item:nth-child(4) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
